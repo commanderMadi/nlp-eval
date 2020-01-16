@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<body>
 
-        <main>
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <form class="" onsubmit="return handleSubmit(event)">
+                <input id="name" type="text" name="input" value="" placeholder="Name">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+                <section>
+                    <strong>Form Results:</strong>
+                    <div id="results">
+                        <div id="polarity">
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-        <script>
-            if ('serviceWorker' in navigator) {
+                        </div>
+                        <div id="subjectivity">
+
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then(registration =>{
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
                     console.log('SW registered successfuly: ', registration);
                 });
             });
-            }else{
+        } else {
             console.log("Service Working not supported");
-                }
+        }
     </script>
-    </body>
+</body>
+
 </html>
